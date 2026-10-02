@@ -1,0 +1,244 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: #ff0055;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #aaaaaa;
+  margin-bottom: 24px;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #2a2a2a;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: #ff0055;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff0055;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #e0004c;
+}
+
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.status-message {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  min-height: 24px;
+}
+
+.card {
+  margin-top: 20px;
+  background-color: #282828;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#coverImg {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+#songTitle {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  word-break: break-word;
+}
+
+#songUploader {
+  font-size: 0.85rem;
+  color: #aaaaaa;
+  margin-bottom: 16px;
+}
+
+.download-btn {
+  width: 100%;
+}
+
+/* --- ANIMAÇÃO PAC-MAN E NOTAS --- */
+.pacman-container {
+  position: relative;
+  width: 260px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 16px;
+  overflow: hidden;
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 0 10px;
+}
+
+.pacman {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  z-index: 2;
+}
+
+.pacman-eye {
+  position: absolute;
+  top: 10px;
+  left: 24px;
+  width: 6px;
+  height: 6px;
+  background-color: #000;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.pacman-mouth-top,
+.pacman-mouth-bottom {
+  position: absolute;
+  width: 50px;
+  height: 25px;
+  background-color: #ffcc00;
+}
+
+.pacman-mouth-top {
+  top: 0;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  animation: chompTop 0.3s infinite alternate;
+}
+
+.pacman-mouth-bottom {
+  bottom: 0;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  animation: chompBottom 0.3s infinite alternate;
+}
+
+@keyframes chompTop {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-30deg); }
+}
+
+@keyframes chompBottom {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(30deg); }
+}
+
+.music-notes {
+  position: absolute;
+  right: 0;
+  display: flex;
+  gap: 24px;
+  z-index: 1;
+}
+
+.note {
+  font-size: 1.6rem;
+  color: #ff0055;
+  animation: moveNotes 1.5s linear infinite;
+}
+
+.note1 { animation-delay: 0s; }
+.note2 { animation-delay: 0.35s; }
+.note3 { animation-delay: 0.7s; }
+.note4 { animation-delay: 1.05s; }
+
+@keyframes moveNotes {
+  0% {
+    transform: translateX(120px);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-180px);
+    opacity: 0;
+  }
+}
+
+/* --- BARRA DE PROGRESSO --- */
+.loading-text {
+  font-size: 0.9rem;
+  color: #ddd;
+  margin-bottom: 12px;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 10px;
+  background-color: #333;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #ffcc00, #ff0055);
+  transition: width 0.3s ease;
+}

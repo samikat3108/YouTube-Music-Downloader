@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Music Downloader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>YouTube Music Downloader</h1>
+    <p class="subtitle">Baixe músicas do YouTube em MP3 com capa e metadados.</p>
+
+    <div class="search-box">
+      <input type="text" id="urlInput" placeholder="Cole o link da música do YouTube aqui..." />
+      <button id="analyzeBtn" onclick="analyzeLink()">Analisar Link</button>
+    </div>
+
+    <div id="statusMessage" class="status-message"></div>
+
+    <!-- Card de Informações da Música -->
+    <div id="infoCard" class="card hidden">
+      <img id="coverImg" src="" alt="Capa da música" />
+      <h2 id="songTitle"></h2>
+      <p id="songUploader"></p>
+      <button class="download-btn" id="downloadBtn" onclick="startDownload()">Baixar MP3</button>
+    </div>
+
+    <!-- Animação do Pac-Man e Barra de Progresso -->
+    <div id="loadingSection" class="card hidden">
+      <div class="pacman-container">
+        <div class="pacman">
+          <div class="pacman-eye"></div>
+          <div class="pacman-mouth-top"></div>
+          <div class="pacman-mouth-bottom"></div>
+        </div>
+        <div class="music-notes">
+          <span class="note note1">♪</span>
+          <span class="note note2">♫</span>
+          <span class="note note3">♩</span>
+          <span class="note note4">♬</span>
+        </div>
+      </div>
+      <p id="loadingText" class="loading-text">A baixar e converter a música...</p>
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="progressBarFill"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
