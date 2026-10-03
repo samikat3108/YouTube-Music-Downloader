@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Music Downloader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>YouTube Music Downloader</h1>
+    <p class="subtitle">Baixe músicas do YouTube em MP3 com capa e metadados.</p>
+
+    <div class="search-box">
+      <input type="text" id="urlInput" placeholder="Cole o link de uma música ou playlist do YouTube..." />
+      <button id="analyzeBtn" onclick="analyzeLink()">Analisar Link</button>
+    </div>
+
+    <div id="statusMessage" class="status-message"></div>
+
+    <!-- Card de Informações da Música -->
+    <div id="infoCard" class="card hidden">
+      <img id="coverImg" src="" alt="Capa da música" />
+      <h2 id="songTitle"></h2>
+      <p id="songUploader"></p>
+      <button class="download-btn" id="downloadBtn" onclick="startDownload()">Adicionar à fila</button>
+    </div>
+
+  </div>
+
+  <div id="queueCard" class="card queue-card">
+    <h2>Fila de downloads</h2>
+    <p id="currentDownload">Nenhum download em andamento.</p>
+    <ul id="queueList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
