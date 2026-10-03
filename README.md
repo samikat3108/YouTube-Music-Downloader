@@ -21,7 +21,7 @@ O projeto instala `yt-dlp` e FFmpeg por meio das dependências npm.
 ## Instalação e execução
 
 ```sh
-npm ci
+npm install
 npm start
 ```
 
