@@ -31,10 +31,6 @@ Os arquivos ficam na pasta `downloads/`, criada automaticamente. Faixas de playl
 
 Para parar o servidor, pressione `Ctrl+C` no terminal.
 
-## Sobre esta versão
-
-Esta versão do projeto não receberá mais atualizações do autor original. Sinta-se à vontade para estudar o código, adaptá-lo, corrigir problemas ou desenvolver novas funcionalidades conforme suas necessidades.
-
 ## Uso responsável
 
 Use a aplicação apenas para conteúdo que você tem autorização para baixar. Respeite os direitos autorais e os termos de uso do YouTube. O servidor foi projetado para uso local; não o exponha à internet sem implementar controles de acesso e limites apropriados.
